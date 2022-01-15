@@ -14,6 +14,8 @@ import {FormsModule} from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,8 @@ import { PostListComponent } from './posts/post-list/post-list.component';
     BrowserModule,
     StoreModule.forRoot({counter:_counterReducer}),
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

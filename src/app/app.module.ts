@@ -7,7 +7,7 @@ import { CounterComponent } from './counter/counter/counter.component';
 import { CounterOutputComponent } from './counter/counter-output/counter-output.component';
 import { CounterButtonComponent } from './counter/counter-button/counter-button.component';
 import { StoreModule } from '@ngrx/store';
-import { counterInitialState, CounterState } from './counter/state/counter.state';
+import { counterInitialState } from './counter/state/counter.state';
 import { _counterReducer } from './counter/state/counter.reducer';
 import { CustomCounterComponent } from './counter/custom-counter/custom-counter.component';
 import {FormsModule} from '@angular/forms';
@@ -16,6 +16,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { _postReducer } from './posts/state/post.reducer';
+import { appReducer } from './state/app.state';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,7 @@ import { environment } from '../environments/environment';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({counter:_counterReducer}),
+    StoreModule.forRoot(appReducer),
     FormsModule,
     AppRoutingModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })

@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { CounterState } from 'src/app/models/counter-state.model';
 import { onChangeChannelName, onCustomeIncrementAction } from '../state/counter.action';
 import { getChannerlNameSelector } from '../state/counter.selector';
-import { CounterState } from '../state/counter.state';
+
 
 @Component({
   selector: 'app-custom-counter',

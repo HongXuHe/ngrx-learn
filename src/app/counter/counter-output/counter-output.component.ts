@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { CounterState } from 'src/app/models/counter-state.model';
 import { _counterReducer } from '../state/counter.reducer';
 import { getCounterSlector } from '../state/counter.selector';
-import { CounterState } from '../state/counter.state';
+
 
 @Component({
   selector: 'app-counter-output',

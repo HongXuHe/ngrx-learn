@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { CounterState } from "./counter.state";
+
 
 const incrementActionType ='[CounterPage] Increment';
 const decrementActionType ='[CounterPage] Decrement';

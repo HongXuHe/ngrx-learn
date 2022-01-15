@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { getCounterSlector } from 'src/app/counter/state/counter.selector';
+import { CounterState } from 'src/app/models/counter-state.model';
+import { postSelector } from '../state/post.selector';
+import { PostState } from '../state/post.state';
 
 @Component({
   selector: 'app-post-list',
@@ -6,10 +12,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-list.component.css']
 })
 export class PostListComponent implements OnInit {
-
-  constructor() { }
+posts$?:Observable<PostState>
+  constructor(private store:Store<{posts:PostState}>) { }
 
   ngOnInit(): void {
+   this.posts$ = this.store.select(postSelector);
   }
 
 }

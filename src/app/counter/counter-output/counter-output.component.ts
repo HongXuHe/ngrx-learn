@@ -15,7 +15,11 @@ counter$?:Observable<CounterState>;
   constructor(private store:Store<{counter:CounterState}>) { }
 
   ngOnInit(): void {
-    this.counter$ = this.store.select('counter');
+
+    this.store.select('counter').subscribe(data=>{
+      console.log('counter change called');
+      this.counter =data.counter;
+    });
   }
 
 }

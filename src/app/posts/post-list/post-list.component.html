@@ -7,6 +7,7 @@
                     <th>Id</th>
                     <th>title</th>
                     <th>description</th>
+                    <th>delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -14,6 +15,7 @@
                     <td>{{post.id}}</td>
                     <td>{{post.title}}</td>
                     <td>{{post.description}}</td>
+                    <td><a (click)="onDelete(post)" class="btn btn-danger">Delete</a></td>
                 </tr>
             </tbody>
         </table>

@@ -4,5 +4,7 @@ import { PostState } from "./post.state";
 
 const modifyPostActionType ='[Post Page] Edit Post';
 const addPostActionType ='[Post Page] Add Post';
+const deletePostActionType ='[Post Page] Delete Post';
 export const onModifyPostAction =createAction(modifyPostActionType,props<{post:Post}>());
 export const onAddPostAction =createAction(addPostActionType,props<{post:Post}>());
+export const onDeletePostAction =createAction(deletePostActionType,props<{post:Post}>());

@@ -6,6 +6,7 @@ import { getCounterSlector } from 'src/app/counter/state/counter.selector';
 import { CounterState } from 'src/app/models/counter-state.model';
 import { Post } from 'src/app/models/post.model';
 import { AppState } from 'src/app/state/app.state';
+import { onDeletePostAction } from '../state/post.action';
 import { postSelector } from '../state/post.selector';
 import { PostState } from '../state/post.state';
 
@@ -25,5 +26,12 @@ posts$?:Observable<PostState>
   }
   onEditPost(post:Post) {
     this.router.navigate(['posts/edit',post.id])
+  }
+
+  onDelete(post:Post) {
+    if(confirm('do u want to delete')){
+      this.store.dispatch(onDeletePostAction({post}));
+      this.router.navigate(['/posts']);
+    }
   }
 }

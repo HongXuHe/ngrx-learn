@@ -21,7 +21,7 @@ import { appReducer } from './state/app.state';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(appReducer),
+    StoreModule.forRoot({}),
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,

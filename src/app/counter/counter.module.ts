@@ -23,7 +23,7 @@ const routes:Routes =[
     ],
     imports:[CommonModule,
         FormsModule,
-        //StoreModule.forFeature('counter',_counterReducer),
+        StoreModule.forFeature('counter',_counterReducer),
         RouterModule.forChild(routes)],
     exports:[]
 })

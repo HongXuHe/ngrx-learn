@@ -5,8 +5,11 @@ import { postStateInit } from "./post.state";
 
 export const _postReducer = createReducer(postStateInit,
     on(onModifyPostAction, (state,action) =>{
+        
         return {
-            ...state
+            ...state,
+           posts:[ ...state.posts.filter(x=>x.id !==action.post.id),
+            action.post]
         };
     }),
     on(onAddPostAction,(state,action)=>{

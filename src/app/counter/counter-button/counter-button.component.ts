@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CounterState } from 'src/app/models/counter-state.model';
+import { AppState } from 'src/app/state/app.state';
 import { onDecrementAction, onIncrementAction, onResetAction } from '../state/counter.action';
 
 
@@ -12,7 +13,7 @@ import { onDecrementAction, onIncrementAction, onResetAction } from '../state/co
 export class CounterButtonComponent implements OnInit {
  
 
-  constructor(private store:Store<CounterState>) { }
+  constructor(private store:Store<AppState>) { }
 
   ngOnInit(): void {
   }

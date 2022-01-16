@@ -5,11 +5,12 @@ import { postStateInit } from "./post.state";
 
 export const _postReducer = createReducer(postStateInit,
     on(onModifyPostAction, (state,action) =>{
-        
+        let postEdited =state.posts.map(x=>{
+           return x.id===action.post.id ? action.post:x
+        });
         return {
             ...state,
-           posts:[ ...state.posts.filter(x=>x.id !==action.post.id),
-            action.post]
+           posts:postEdited
         };
     }),
     on(onAddPostAction,(state,action)=>{

@@ -10,7 +10,7 @@ import { StoreModule } from '@ngrx/store';
 import { counterInitialState } from './counter/state/counter.state';
 import { _counterReducer } from './counter/state/counter.reducer';
 import { CustomCounterComponent } from './counter/custom-counter/custom-counter.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { PostListComponent } from './posts/post-list/post-list.component';
@@ -18,6 +18,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { _postReducer } from './posts/state/post.reducer';
 import { appReducer } from './state/app.state';
+import { AddPostComponent } from './posts/add-post/add-post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,12 +28,14 @@ import { appReducer } from './state/app.state';
     CustomCounterComponent,
     HomeComponent,
     HeaderComponent,
-    PostListComponent
+    PostListComponent,
+    AddPostComponent
   ],
   imports: [
     BrowserModule,
     StoreModule.forRoot(appReducer),
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],

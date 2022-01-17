@@ -12,6 +12,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { _postReducer } from './posts/state/post.reducer';
 import { appReducer } from './state/app.state';
+import { EffectsModule } from '@ngrx/effects';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,8 +26,10 @@ import { appReducer } from './state/app.state';
     StoreModule.forRoot({}),
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule,
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    EffectsModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,8 @@ export class AuthService{
 
  logIn(user:AuthModel):Observable<AuthModel>{
      let url =environment.API;
+     console.log(user);
+     console.log(url);
      return this.http.post<AuthModel>(url,user)
  }
 }

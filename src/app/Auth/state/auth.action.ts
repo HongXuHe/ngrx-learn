@@ -6,5 +6,5 @@ const signInSuccessActionType ='[SignInPage] Success';
 const signInFailActionType ='[SignInPage] Fail';
 
 export const onSignInStartAction =createAction(signInStartActionType,props<{signIn:AuthState}>());
-export const onSignInSuccessAction =createAction(signInSuccessActionType);
+export const onSignInSuccessAction =createAction(signInSuccessActionType,props<AuthState>());
 export const onSignInFailAction =createAction(signInFailActionType);
